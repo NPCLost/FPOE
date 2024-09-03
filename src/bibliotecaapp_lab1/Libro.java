@@ -2,7 +2,7 @@
 Proposito: Definicion de la clase Libro
 Autor 1: Juan Esteban Lozano B. - 2363228-2724
 Autor 2: Juan David Arias Martinez - 2363132-2724
-Autor 3: Andres Felipe Leon Tabares - 2363-2724
+Autor 3: Andres Felipe Leon Tabares - 2363217-2724
 Fecha: 31-08-2024
 Version: 0.8
 */
@@ -25,6 +25,10 @@ public class Libro {
         Entrada = "";
         titulo = "";
         autor = "";
+        promPrecios = 0.0;
+        preciosHistoricos.add(promPrecios);
+        preciosHistoricos.add(promPrecios);
+        preciosHistoricos.add(promPrecios);
         editorial = "";
     }
 
@@ -73,15 +77,15 @@ public class Libro {
     public void setPreciosHistoricos() {
         String a = JOptionPane.showInputDialog("Ingrese el Primer Precio Historico");
         Double aNum = Double.parseDouble(a);
-        preciosHistoricos.add(aNum);
+        preciosHistoricos.set(0, aNum);
         
         String b = JOptionPane.showInputDialog("Ingrese el segundo Precio Historico");
         Double bNum = Double.parseDouble(b);
-        preciosHistoricos.add(bNum);
+        preciosHistoricos.set(1, bNum);
         
         String c = JOptionPane.showInputDialog("Ingrese el tercer Precio Historico");
         Double cNum = Double.parseDouble(c);
-        preciosHistoricos.add(cNum);
+        preciosHistoricos.set(2, cNum);
         
     }
     
@@ -95,13 +99,13 @@ public class Libro {
 
     public void getLibro(){
         System.out.println(
-               "----------------------------------------------------------------" +
+               "----------------------------------------------------------------\n" +
                "ISBN: " + isbn + "\n" +
-               "Título: " + titulo + "\n" +
+               "Titulo: " + titulo + "\n" +
                "Autor: " + autor + "\n" +
                "Editorial: " + editorial + "\n" +
-               "Precios Históricos: " + preciosHistoricos.toString()+ "\n" + 
+               "Precios Historicos: " + preciosHistoricos.toString()+ "\n" + 
                "Promedio de los precios: " + promPrecios +
-               "----------------------------------------------------------------" + "\n");
+               "----------------------------------------------------------------\n");
     }
 }
